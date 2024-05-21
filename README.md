@@ -93,7 +93,7 @@ MySQL is widely used in various industries, proving **maturity** and **stability
 
 
 
-# App architecture
+# App Architecture
 
 ![high level architecture](https://github.com/lenylopez19/secureFileVault/assets/20192486/b9ead121-81a3-406f-864d-0aeff22e49e6)
 
@@ -206,7 +206,9 @@ To Dencrypt the data it utilize the provided initializer vector(iv), the aes-256
 </p>
 
 
-# APP FLOW
+# APP Flow
+
+A series of visual representations illustrating key processes such as user registration (Sign up), authentication (Log in), file management including uploading files, and accessing stored files through downloading. These offer insights into the sequential steps users will take while interacting with the application.
 
 # Sign up 
 ![sign up user flow](https://github.com/lenylopez19/secureFileVault/assets/20192486/0d8a4787-6b4c-42e3-a137-dd4a19fcd99e)
