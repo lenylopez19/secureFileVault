@@ -23,7 +23,8 @@
     - [Area of Improvement](#area-of-improvement)
     - [Bugs](#bugs)
 6. [API](#API)
-7. [Mobile Client codebase doc]()
+7. [Mobile Client codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
+8. [Server codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
 
 
 [APP ANDROID AND IOS IMAGE HERE]
