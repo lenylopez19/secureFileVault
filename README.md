@@ -370,4 +370,5 @@ When inserting a long enough text the input overflows its container.
 # Useful resources
 
 [Mobile Client codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
+
 [Server codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
