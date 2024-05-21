@@ -119,8 +119,13 @@ MySQL is widely used in various industries, proving **maturity** and **stability
 
 ## Token sign process
 
-the JWT_SECRET its a 32 bytes key that is stored in the server.
-The token gets signed using the provided payload, the JWT_SECRET and the HS256 Algorithm.
+The token gets signed using the provided payload (user id and email), the JWT_SECRET and the HS256 Algorithm.
+getting as result the token string ready to be sent to the user.
+
+> This process takes place in the server.
+
+> The JWT_SECRET its a 32 bytes key that is stored in the enviroment variable of the server.
+
 
 <p align="center" >
 <img src="https://github.com/lenylopez19/secureFileVault/assets/20192486/6ed13854-7468-4b30-9b72-fb834c7a309b"  width="40%">
@@ -128,22 +133,42 @@ The token gets signed using the provided payload, the JWT_SECRET and the HS256 A
 
 ## Token decode process
 
+The provided token (tipically obtained in the header of the user request) gets verfied using the JWT_SECRET and the HS256 algorithm
+if the providen token is valid we get its payload data (user id and email).
+
+> This process takes place in the server.
+
+> The JWT_SECRET its a 32 bytes key that is stored in the enviroment variable of the server.
+
 <p align="center" >
 <img src="https://github.com/lenylopez19/secureFileVault/assets/20192486/4765a79b-4505-4374-a65e-c51d49b5bb54" align="center" width="50%">
 </p>
 
+## Encryption process
+
+To encrypt the data it generates a random 16 bytes public key for the initializer vector(iv), then it encrypts the data using the aes-256-cbc algorithm, the PRIVATE_KEY, and the generated iv.
+
+> This process takes place in the server.
+
+> The PRIVATE_KEY its a 32 bytes key that is stored in the enviroment variable of the server.
+
+<p align="center" >
+<img src="https://github.com/lenylopez19/secureFileVault/assets/20192486/7a6273ee-97c9-4125-b51a-e0ce80316633" align="center" width="50%">
+</p>
+
+
 ## Decryption process
 
+To Dencrypt the data it utilize the provided initializer vector(iv), the aes-256-cbc algorithm and the PRIVATE_KEY
+
+> This process takes place in the server.
+
+> The PRIVATE_KEY its a 32 bytes key that is stored in the enviroment variable of the server.
 
 <p align="center" >
 <img src="https://github.com/lenylopez19/secureFileVault/assets/20192486/ceed6273-ce5e-4e2d-a07c-1dcf3376cd7e" align="center" width="50%">
 </p>
 
-## Encryption process
-
-<p align="center" >
-<img src="https://github.com/lenylopez19/secureFileVault/assets/20192486/7a6273ee-97c9-4125-b51a-e0ce80316633" align="center" width="50%">
-</p>
 
 # APP FLOW
 
@@ -179,7 +204,7 @@ Results of real device tests in development environment through expo go app.
 | samsung galaxy A20     | ANDROID | 10.0.0  | Loading screen doesn't reach the bottom of the screen | NONE            |
 
 > The above chart represents a list of device specific bugs, global bugs are ignored in this context as those affect all platforms.
-> 
+
 ## **Features to implement**
 
 **Add sorting options for files, like name file size, file type, recents, date**
