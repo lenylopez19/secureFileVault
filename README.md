@@ -1,7 +1,7 @@
 
 [APP ANDROID AND IOS IMAGE HERE]
 
-# secureFileVault
+# Secure File Vault
 
 Protect your important files with secureFileVault, a robust solution designed to ensure the integrity and security of your data. With secureFileVault, you can confidently store, track, and verify the history of your files, guaranteeing that they remain in their original form without any tampering.
 
@@ -13,7 +13,7 @@ When you need to access your file, secureFileVault retrieves the specific segmen
     
 Each file is verified with a unique hash to ensure it remains unchanged and authentic.
 
-# TECHNOLOGIES
+# Technologies
 
 **React native** with **Expo framework**
 > For the mobile clients.
@@ -24,7 +24,7 @@ Each file is verified with a unique hash to ensure it remains unchanged and auth
 **Mysql** 
 >For the database
 
-# Why the stack
+# Stack Justification
 
 ### React Native with Expo for Mobile Client
 
