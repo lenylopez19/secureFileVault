@@ -132,14 +132,14 @@ The file ID, along with the user token, is sent through a POST request from the 
 ![download file process](https://github.com/lenylopez19/secureFileVault/assets/20192486/0fdace60-37ff-42dd-9705-f2615b445f14)
 
 
-### Block posting to the tangle
+## Block posting to the tangle
 
 A new client instance with the node address of the network gets initialized. The block is constructed using a mnemonic phrase and the payload data, which is formed by the tag and the data to be sent to the Tangle. If successful, the Tangle network responds with a block ID.
 > This process takes place in the server.
 
 ![build and post to tangle](https://github.com/lenylopez19/secureFileVault/assets/20192486/626f7c61-90ec-4a36-9462-a76fa1ccc5b5)
 
-### Fetching block from the tangle
+## Fetching block from the tangle
 
 We initialize a new client instance with the node address of the network. With the supplied block ID we retreive the block from the tangle network, said block contains in its payload the data needed to assemble the file back. 
 > This process takes place in the server.
