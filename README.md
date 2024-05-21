@@ -104,16 +104,27 @@ MySQL is widely used in various industries, proving **maturity** and **stability
 
 
 ## Login 
+
+the user email and password is sent through post request, the servers verifies its data against the database and sign the token with the user email and user id ([see token sign process](#token-sign-process))
+
 ![LOGIN PROCESS](https://github.com/lenylopez19/secureFileVault/assets/20192486/c4247409-8a90-4751-8a0f-0a485be4f47b)
 
 
-
-
 ## Upload file
-The file alogn with the user token is sent through post request from the client to the server, the server then verifies the token ([see Token verify/decode process](#Token-verfy/decode-process))  and process the file.
-said file get hashed, encrypted ([see encryption process](#Encryption-process)) , and encoded to base64, said base64 gets deconstructed, and a block is created with the hash, the public decryption key, and the first 10 characters of the deconstructed base64. the rest of the base64 gets stored in the server and the block is sent to the tangles network ([see block posting to the tangle](#Block posting-to-the-tangle)) then the file metadata along with the block id gets stored in the database
+
+The file alogn with the user token is sent through post request from the client to the server, the server then verifies the token ([see Token verify/decode process](#Token-verify/decode-process))  and process the file.
+said file get hashed, encrypted ([see encryption process](#Encryption-process)) , and encoded to base64, said base64 gets deconstructed, and a block is created with the hash, the public decryption key, and the first 10 characters of the deconstructed base64. the rest of the base64 gets stored in the server and the block is sent to the tangles network ([see block posting to the tangle](#Block-posting-to-the-tangle)) then the file metadata along with the block id gets stored in the database
+
 
 ![upload file process](https://github.com/lenylopez19/secureFileVault/assets/20192486/f4c4f722-a50f-45c1-a4bf-900bb5918a8a)
+
+
+## Download file
+![download file process](https://github.com/lenylopez19/secureFileVault/assets/20192486/0fdace60-37ff-42dd-9705-f2615b445f14)
+![fetch block tangle](https://github.com/lenylopez19/secureFileVault/assets/20192486/9038953f-b41a-4d95-8998-95ab58c3546d)
+
+
+
 
 ### Block posting to the tangle
 
@@ -121,11 +132,6 @@ We initialize a new client instance with the node address of the network. The bl
 > This process takes place in the server.
 
 ![build and post to tangle](https://github.com/lenylopez19/secureFileVault/assets/20192486/626f7c61-90ec-4a36-9462-a76fa1ccc5b5)
-
-
-## Download file
-![download file process](https://github.com/lenylopez19/secureFileVault/assets/20192486/0fdace60-37ff-42dd-9705-f2615b445f14)
-![fetch block tangle](https://github.com/lenylopez19/secureFileVault/assets/20192486/9038953f-b41a-4d95-8998-95ab58c3546d)
 
 
 ## Token sign process
@@ -142,7 +148,7 @@ getting as result the token string ready to be sent to the user.
 <img src="https://github.com/lenylopez19/secureFileVault/assets/20192486/6ed13854-7468-4b30-9b72-fb834c7a309b"  width="40%">
 </p>
 
-## Token verfy/decode process
+## Token verify/decode process
 
 The provided token (tipically obtained in the header of the user request) gets verfied using the JWT_SECRET and the HS256 algorithm
 if the providen token is valid we get its payload data (user id and email).
