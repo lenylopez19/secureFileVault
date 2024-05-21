@@ -920,6 +920,7 @@ at the moment of sending the block data to the tangle network, **if there’s no
 **Proposed solution:**
 - If there’s no healthy node on the tangle we should cancel the process return a network error and delete the uploaded file from the server and database, OR, we could check first for a healthy node before doing any file processing at all. 
 - **HOTFIXED**: If theres no blockID retreived from the posted block (the post block failed), the desconstructed base64 file gets deleted
+  
 **[MID]UPLOADED FILE TIME IS OFF BY 4 HOURS**
 
 **Description:**
