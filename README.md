@@ -1,4 +1,5 @@
 
+
 [APP ANDROID AND IOS IMAGE HERE]
 # secureFileVault
 
@@ -100,39 +101,50 @@ MySQL is widely used in various industries, proving **maturity** and **stability
 
 
 ## Sign Up
+
+ The **user details** are sent through post request, the servers verifies its data and writes it on the database 
+
 ![SIGNUP PROCESS](https://github.com/lenylopez19/secureFileVault/assets/20192486/09f0415c-f424-453c-8a4c-2895733786da)
+
 
 
 ## Login 
 
-the user email and password is sent through post request, the servers verifies its data against the database and sign the token with the user email and user id ([see token sign process](#token-sign-process))
+The user email and password are sent through **post request**, the server verifies its data against the database and **sign the token** with the user email and user id ([see token sign process](#token-sign-process)) said **token** is sent back to the user
 
 ![LOGIN PROCESS](https://github.com/lenylopez19/secureFileVault/assets/20192486/c4247409-8a90-4751-8a0f-0a485be4f47b)
 
 
 ## Upload file
 
-The file alogn with the user token is sent through post request from the client to the server, the server then verifies the token ([see Token verify/decode process](#Token-verify/decode-process))  and process the file.
-said file get hashed, encrypted ([see encryption process](#Encryption-process)) , and encoded to base64, said base64 gets deconstructed, and a block is created with the hash, the public decryption key, and the first 10 characters of the deconstructed base64. the rest of the base64 gets stored in the server and the block is sent to the tangles network ([see block posting to the tangle](#Block-posting-to-the-tangle)) then the file metadata along with the block id gets stored in the database
+The file, along with the user token, is sent through a POST request from the client to the server. The server then verifies the token ([see Token verify/decode process](#Token-verify/decode-process)) and processes the file. The file gets hashed, encrypted ([see encryption process](#Encryption-process)), and encoded to base64. The base64 is then deconstructed, and a block is created with the hash, the public decryption key, and the first 10 characters of the deconstructed base64. The rest of the base64 is stored on the server, and the block is sent to the Tangle network ([see block posting to the tangle](#Block-posting-to-the-tangle)). Finally, the file metadata along with the block ID is stored in the database.
+
 
 
 ![upload file process](https://github.com/lenylopez19/secureFileVault/assets/20192486/f4c4f722-a50f-45c1-a4bf-900bb5918a8a)
 
 
 ## Download file
+
+The file ID, along with the user token, is sent through a POST request from the client to the server. The server then verifies the token ([see Token verify/decode process](#Token-verify/decode-process)) and queries the database for the file metadata, the destructured base64 file URL, and the block ID. It then fetches the block from the Tangle network using its block ID ([see Fetching block from the tangle](#Fetching-block-from-the-tangle)). The payload data is used to reconstruct the base64 file, decrypt the file ([see Decryption process](#Decryption-process)), and verify it against the original hash obtained from the block's payload. Finally, the file is sent to the user.
+
+
 ![download file process](https://github.com/lenylopez19/secureFileVault/assets/20192486/0fdace60-37ff-42dd-9705-f2615b445f14)
-![fetch block tangle](https://github.com/lenylopez19/secureFileVault/assets/20192486/9038953f-b41a-4d95-8998-95ab58c3546d)
-
-
 
 
 ### Block posting to the tangle
 
-We initialize a new client instance with the node address of the network. The block is constructed using a mnemonic phrase and the payload data, which is formed by the tag and the data to be sent to the Tangle. If successful, the Tangle network responds with a block ID.
+A new client instance with the node address of the network gets initialized. The block is constructed using a mnemonic phrase and the payload data, which is formed by the tag and the data to be sent to the Tangle. If successful, the Tangle network responds with a block ID.
 > This process takes place in the server.
 
 ![build and post to tangle](https://github.com/lenylopez19/secureFileVault/assets/20192486/626f7c61-90ec-4a36-9462-a76fa1ccc5b5)
 
+### Fetching block from the tangle
+
+We initialize a new client instance with the node address of the network. With the supplied block ID we retreive the block from the tangle network, said block contains in its payload the data needed to assemble the file back. 
+> This process takes place in the server.
+
+![fetch block tangle](https://github.com/lenylopez19/secureFileVault/assets/20192486/9038953f-b41a-4d95-8998-95ab58c3546d)
 
 ## Token sign process
 
