@@ -202,19 +202,19 @@ To Dencrypt the data it utilize the provided initializer vector(iv), the aes-256
 # APP FLOW
 
 # Sign up 
-![enter image description here](https://i.postimg.cc/dv9M0vHb/temp-Image-Vdog-PG.avif)
+![sign up user flow](https://github.com/lenylopez19/secureFileVault/assets/20192486/0d8a4787-6b4c-42e3-a137-dd4a19fcd99e)
 
 # Log in
-![login](https://i.postimg.cc/sfT04jb1/temp-Imagel-Dx-W6m.avif)
+![Login user flow](https://github.com/lenylopez19/secureFileVault/assets/20192486/15bb8aec-85d5-448e-9bd2-b117f34acc6a)
 
 # Upload file
 
-![enter image description here](https://i.postimg.cc/QCdYZwKX/temp-Imageig6-AKX.avif)
-
+![upload file user flow](https://github.com/lenylopez19/secureFileVault/assets/20192486/7c135311-82a4-4ee3-a559-f17d39d980cf)
 
 # Download file
 
-![enter image description here](https://i.postimg.cc/LXTQ72XC/temp-Image-X7l-UTg.avif)
+![download file user flow](https://github.com/lenylopez19/secureFileVault/assets/20192486/49dfaae1-4463-40eb-8983-a6b772885b59)
+
 
 # DEVELOPMENT
 
