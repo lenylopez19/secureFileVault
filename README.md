@@ -1,31 +1,3 @@
-# Table of Contents
-
-1. [Description](#secureFileVault)
-2. [Technologies Used](#technologies-used)
-    - [React Native with Expo for Mobile Client](#react-native-with-expo-for-mobile-client)
-    - [Node.js with Express for Server](#nodejs-with-express-for-server)
-    - [Local Storage on Node.js Server](#local-storage-on-nodejs-server)
-    - [MySQL for Database](#mysql-for-database)
-3. [Project Structure](#project-structure)
-    - [Mobile Client](#mobile-client)
-    - [Server](#server)
-4. [App Architecture](#app-architecture)
-    - [Server Architecture](#server-architecture)
-    - [Database Schema](#database-schema)
-    - [Processes](#processes)
-        - [Sign Up](#sign-up)
-        - [Login](#login)
-        - [Upload File](#upload-file)
-        - [Download File](#download-file)
-5. [Development](#development)
-    - [On Device Tests](#on-device-tests)
-    - [Features to Implement](#features-to-implement)
-    - [Area of Improvement](#area-of-improvement)
-    - [Bugs](#bugs)
-6. [API](#API)
-7. [Mobile Client codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
-8. [Server codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
-
 
 [APP ANDROID AND IOS IMAGE HERE]
 
@@ -395,3 +367,7 @@ When inserting a long enough text the input overflows its container.
 
 [Backend Service API](docs/Backend%20API.md)
 
+# Useful resources
+
+[Mobile Client codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
+[Server codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
