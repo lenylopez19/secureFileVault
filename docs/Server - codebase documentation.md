@@ -52,10 +52,151 @@
 </dd>
 </dl>
 
+<a name="createAndPostBlock"></a>
+
+## createAndPostBlock(tag, data) ⇒ <code>Promise.&lt;string&gt;</code>
+Creates a new block with the provided tag and data, then posts it to the IOTA network.
+
+**Kind**: global function  
+**Returns**: <code>Promise.&lt;string&gt;</code> - - A promise that resolves to the ID of the created block.  
+**Throws**:
+
+- <code>Error</code> - Throws an error if there is an issue during the block creation and posting process.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| tag | <code>string</code> | The tag for the block. |
+| data | <code>string</code> | The data to be included in the block. |
+
+
+<a name="fetchBlock"></a>
+
+## fetchBlock(block) ⇒ <code>Promise.&lt;{tag: string, data: string}&gt;</code>
+Fetches a block from the IOTA network and converts its tag and data from hexadecimal format to UTF-8.
+
+**Kind**: global function  
+**Returns**: <code>Promise.&lt;{tag: string, data: string}&gt;</code> - - A promise that resolves to an object containing the tag and data of the fetched block in UTF-8 format.  
+**Throws**:
+
+- <code>Error</code> - Throws an error if there is an issue during the block fetching process.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| block | <code>any</code> | The ID of the block to fetch. |
+
+
+
+
 <a name="module_encryptionService"></a>
 
 ## encryptionService
 Provides encryption and hashing functionalities, including password comparison, file encryption/decryption, and file hashing.
+
+
+* [encryptionService](#module_encryptionService)
+    * [.encryptionService](#module_encryptionService.encryptionService)
+        * [.comparePasswords(plainPassword, hashedPassword)](#module_encryptionService.encryptionService.comparePasswords) ⇒ <code>Promise.&lt;boolean&gt;</code>
+        * [.createHash(plainText, strength)](#module_encryptionService.encryptionService.createHash) ⇒ <code>Promise.&lt;string&gt;</code>
+        * [.encryptFile(filepath, destinationPath)](#module_encryptionService.encryptionService.encryptFile) ⇒ <code>string</code>
+        * [.decryptFile(filePath, destinationPath, iv)](#module_encryptionService.encryptionService.decryptFile)
+        * [.verifyHash(data, hashToVerify)](#module_encryptionService.encryptionService.verifyHash) ⇒ <code>Promise.&lt;boolean&gt;</code>
+        * [.hashFile(filePath)](#module_encryptionService.encryptionService.hashFile) ⇒ <code>Promise.&lt;string&gt;</code>
+
+<a name="module_encryptionService.encryptionService"></a>
+
+### encryptionService.encryptionService
+Provides encryption and hashing functionalities.
+
+**Kind**: static class of [<code>encryptionService</code>](#module_encryptionService)  
+
+* [.encryptionService](#module_encryptionService.encryptionService)
+    * [.comparePasswords(plainPassword, hashedPassword)](#module_encryptionService.encryptionService.comparePasswords) ⇒ <code>Promise.&lt;boolean&gt;</code>
+    * [.createHash(plainText, strength)](#module_encryptionService.encryptionService.createHash) ⇒ <code>Promise.&lt;string&gt;</code>
+    * [.encryptFile(filepath, destinationPath)](#module_encryptionService.encryptionService.encryptFile) ⇒ <code>string</code>
+    * [.decryptFile(filePath, destinationPath, iv)](#module_encryptionService.encryptionService.decryptFile)
+    * [.verifyHash(data, hashToVerify)](#module_encryptionService.encryptionService.verifyHash) ⇒ <code>Promise.&lt;boolean&gt;</code>
+    * [.hashFile(filePath)](#module_encryptionService.encryptionService.hashFile) ⇒ <code>Promise.&lt;string&gt;</code>
+
+<a name="module_encryptionService.encryptionService.comparePasswords"></a>
+
+#### encryptionService.comparePasswords(plainPassword, hashedPassword) ⇒ <code>Promise.&lt;boolean&gt;</code>
+Compares a plain password with a hashed password.
+
+**Kind**: static method of [<code>encryptionService</code>](#module_encryptionService.encryptionService)  
+**Returns**: <code>Promise.&lt;boolean&gt;</code> - - A promise that resolves to a boolean indicating if the passwords match.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| plainPassword | <code>string</code> | The plain text password. |
+| hashedPassword | <code>string</code> | The hashed password. |
+
+<a name="module_encryptionService.encryptionService.createHash"></a>
+
+#### encryptionService.createHash(plainText, strength) ⇒ <code>Promise.&lt;string&gt;</code>
+Creates a hash of a plain text string with a specified strength.
+
+**Kind**: static method of [<code>encryptionService</code>](#module_encryptionService.encryptionService)  
+**Returns**: <code>Promise.&lt;string&gt;</code> - - A promise that resolves to the hashed string.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| plainText | <code>string</code> | The plain text to hash. |
+| strength | <code>number</code> | The cost factor (strength) for the hashing algorithm. |
+
+<a name="module_encryptionService.encryptionService.encryptFile"></a>
+
+#### encryptionService.encryptFile(filepath, destinationPath) ⇒ <code>string</code>
+Encrypts a file and saves the encrypted data to a destination path.
+
+**Kind**: static method of [<code>encryptionService</code>](#module_encryptionService.encryptionService)  
+**Returns**: <code>string</code> - - The initialization vector (IV) used for encryption, encoded in hex format.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| filepath | <code>string</code> | The path to the file to encrypt. |
+| destinationPath | <code>string</code> | The path to save the encrypted file. |
+
+<a name="module_encryptionService.encryptionService.decryptFile"></a>
+
+#### encryptionService.decryptFile(filePath, destinationPath, iv)
+Decrypts an encrypted file and saves the decrypted data to a destination path.
+
+**Kind**: static method of [<code>encryptionService</code>](#module_encryptionService.encryptionService)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| filePath | <code>string</code> | The path to the encrypted file. |
+| destinationPath | <code>string</code> | The path to save the decrypted file. |
+| iv | <code>string</code> | The initialization vector (IV) used for decryption, encoded in hex format. |
+
+<a name="module_encryptionService.encryptionService.verifyHash"></a>
+
+#### encryptionService.verifyHash(data, hashToVerify) ⇒ <code>Promise.&lt;boolean&gt;</code>
+Verifies if the hash of the data matches a given hash.
+
+**Kind**: static method of [<code>encryptionService</code>](#module_encryptionService.encryptionService)  
+**Returns**: <code>Promise.&lt;boolean&gt;</code> - - A promise that resolves to a boolean indicating if the hash matches.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>string</code> | The data to hash and verify. |
+| hashToVerify | <code>string</code> | The hash to verify against. |
+
+<a name="module_encryptionService.encryptionService.hashFile"></a>
+
+#### encryptionService.hashFile(filePath) ⇒ <code>Promise.&lt;string&gt;</code>
+Computes the SHA-256 hash of a file.
+
+**Kind**: static method of [<code>encryptionService</code>](#module_encryptionService.encryptionService)  
+**Returns**: <code>Promise.&lt;string&gt;</code> - - A promise that resolves to the hash of the file, encoded in hex format.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| filePath | <code>string</code> | The path to the file to hash. |
+
+
 
 <a name="UserController"></a>
 
