@@ -1,6 +1,33 @@
+# Table of Contents
+
+1. [Description](#secureFileVault)
+2. [Technologies Used](#technologies-used)
+    - [React Native with Expo for Mobile Client](#react-native-with-expo-for-mobile-client)
+    - [Node.js with Express for Server](#nodejs-with-express-for-server)
+    - [Local Storage on Node.js Server](#local-storage-on-nodejs-server)
+    - [MySQL for Database](#mysql-for-database)
+3. [Project Structure](#project-structure)
+    - [Mobile Client](#mobile-client)
+    - [Server](#server)
+4. [App Architecture](#app-architecture)
+    - [Server Architecture](#server-architecture)
+    - [Database Schema](#database-schema)
+    - [Processes](#processes)
+        - [Sign Up](#sign-up)
+        - [Login](#login)
+        - [Upload File](#upload-file)
+        - [Download File](#download-file)
+5. [Development](#development)
+    - [On Device Tests](#on-device-tests)
+    - [Features to Implement](#features-to-implement)
+    - [Area of Improvement](#area-of-improvement)
+    - [Bugs](#bugs)
+6. [API](#API)
+7. [Mobile Client codebase doc]()
 
 
 [APP ANDROID AND IOS IMAGE HERE]
+
 # secureFileVault
 
 Protect your important files with secureFileVault, a robust solution designed to ensure the integrity and security of your data. With secureFileVault, you can confidently store, track, and verify the history of your files, guaranteeing that they remain in their original form without any tampering.
@@ -12,8 +39,6 @@ secureFileVault breaks down your file into key essential parts, distributing the
 When you need to access your file, secureFileVault retrieves the specific segments from the tangle network, decrypts, and reassembles your data.
     
 Each file is verified with a unique hash to ensure it remains unchanged and authentic.
-
-LINK TO KNOW MORE
 
 # TECHNOLOGIES
 
@@ -365,6 +390,7 @@ When inserting a long enough text the input overflows its container.
 
 
 
-# APIS
+# API
 
+[Backend Service API](docs/Backend%20API.md)
 
