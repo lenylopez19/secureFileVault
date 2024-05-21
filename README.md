@@ -17,10 +17,10 @@ LINK TO KNOW MORE
 
 # TECHNOLOGIES
 
-**React native**  with **Expo framework**
+**React native** with **Expo framework**
 > For the mobile clients.
 
-**Node.js**  with **Express framework**
+**Node.js** with **Express framework**
 >For the server and the Restful api
 
 **Mysql** 
@@ -101,6 +101,10 @@ MySQL is widely used in various industries, proving **maturity** and **stability
 
 ### Server 
 ![backend mvc](https://github.com/lenylopez19/secureFileVault/assets/20192486/a2eae40c-b27f-4a70-9aa1-c9eefd32a478)
+
+## DB Schema
+
+![database scheema](https://github.com/lenylopez19/secureFileVault/assets/20192486/eaad170f-5786-444f-a933-b5b305dee958)
 
 
 ## Processes
