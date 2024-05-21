@@ -99,8 +99,13 @@ MySQL is widely used in various industries, proving **maturity** and **stability
 
 ![high level architecture](https://github.com/lenylopez19/secureFileVault/assets/20192486/b9ead121-81a3-406f-864d-0aeff22e49e6)
 
+### Server 
+![backend mvc](https://github.com/lenylopez19/secureFileVault/assets/20192486/a2eae40c-b27f-4a70-9aa1-c9eefd32a478)
 
-## Sign Up
+
+## Processes
+
+### Sign Up
 
  The **user details** are sent through post request, the servers verifies its data and writes it on the database 
 
