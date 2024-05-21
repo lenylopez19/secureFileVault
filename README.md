@@ -3,15 +3,15 @@
 
 # Secure File Vault
 
-Protect your important files with secureFileVault, a robust solution designed to ensure the integrity and security of your data. With secureFileVault, you can confidently store, track, and verify the history of your files, guaranteeing that they remain in their original form without any tampering.
+Protect your **important** files with secureFileVault, a robust solution designed to ensure the **integrity** and **security** of your data. With secureFileVault, you can confidently store, track, and verify the history of your files, guaranteeing that they remain in their original form without any **tampering**.
 
 **How it Works:**
 
-secureFileVault breaks down your file into key essential parts, distributing them securely across the tangle network, while storing only partial, non-usable segments locally.
+secureFileVault breaks down your file into key essential parts, distributing them securely across the **tangle network**, while storing only partial, non-usable segments locally.
     
-When you need to access your file, secureFileVault retrieves the specific segments from the tangle network, decrypts, and reassembles your data.
+When you need to access your file, secureFileVault retrieves the **specific segments** from the tangle network, decrypts, and reassembles your data.
     
-Each file is verified with a unique hash to ensure it remains unchanged and authentic.
+Each file is **verified** with a unique hash to ensure it remains unchanged and **authentic**.
 
 # Technologies
 
@@ -124,7 +124,7 @@ The user email and password are sent through **post request**, the server verifi
 
 ## Upload file
 
-The file, along with the user token, is sent through a POST request from the client to the server. The server then verifies the token ([see Token verify/decode process](#Token-verify/decode-process)) and processes the file. The file gets hashed, encrypted ([see encryption process](#Encryption-process)), and encoded to base64. The base64 is then deconstructed, and a block is created with the hash, the public decryption key, and the first 10 characters of the deconstructed base64. The rest of the base64 is stored on the server, and the block is sent to the Tangle network ([see block posting to the tangle](#Block-posting-to-the-tangle)). Finally, the file metadata along with the block ID is stored in the database.
+The file, along with the user token, is sent through a **POST request** from the client to the server. The server then verifies the token ([see Token verify/decode process](#Token-verify/decode-process)) and processes the file. The file gets **hashed**, **encrypted** ([see encryption process](#Encryption-process)), and **encoded to base64**. The base64 is then deconstructed, and a **block** is created with the hash, the public decryption key, and the first 10 characters of the deconstructed base64. The rest of the base64 is stored on the server, and the block is sent to the **Tangle network** ([see block posting to the tangle](#Block-posting-to-the-tangle)). Finally, the file metadata along with the **block ID** is stored in the **database**.
 
 
 
@@ -133,7 +133,7 @@ The file, along with the user token, is sent through a POST request from the cli
 
 ## Download file
 
-The file ID, along with the user token, is sent through a POST request from the client to the server. The server then verifies the token ([see Token verify/decode process](#Token-verify/decode-process)) and queries the database for the file metadata, the destructured base64 file URL, and the block ID. It then fetches the block from the Tangle network using its block ID ([see Fetching block from the tangle](#Fetching-block-from-the-tangle)). The payload data is used to reconstruct the base64 file, decrypt the file ([see Decryption process](#Decryption-process)), and verify it against the original hash obtained from the block's payload. Finally, the file is sent to the user.
+The file ID, along with the user token, is sent through a **POST request** from the client to the server. The server then verifies the token ([see Token verify/decode process](#Token-verify/decode-process)) and queries the database for the **file metadata**, the **destructured base64 file URL**, and the **block ID**. It then fetches the block from the **Tangle network** using its block ID ([see Fetching block from the tangle](#Fetching-block-from-the-tangle)). The **payload data** is used to reconstruct the base64 file, decrypt the file ([see Decryption process](#Decryption-process)), and verify it against the **original** hash obtained from the block's payload. Finally, the file is sent to the user.
 
 
 ![download file process](https://github.com/lenylopez19/secureFileVault/assets/20192486/0fdace60-37ff-42dd-9705-f2615b445f14)
@@ -141,21 +141,21 @@ The file ID, along with the user token, is sent through a POST request from the 
 
 ## Block posting to the tangle
 
-A new client instance with the node address of the network gets initialized. The block is constructed using a mnemonic phrase and the payload data, which is formed by the tag and the data to be sent to the Tangle. If successful, the Tangle network responds with a block ID.
+A new client instance with the **node address** of the network gets initialized. The **block** is constructed using a **mnemonic** phrase and the **payload** data, which is formed by the **tag** and the **data** to be sent to the Tangle. If successful, the Tangle network responds with a **block ID**.
 > This process takes place in the server.
 
 ![build and post to tangle](https://github.com/lenylopez19/secureFileVault/assets/20192486/626f7c61-90ec-4a36-9462-a76fa1ccc5b5)
 
 ## Fetching block from the tangle
 
-We initialize a new client instance with the node address of the network. With the supplied block ID we retreive the block from the tangle network, said block contains in its payload the data needed to assemble the file back. 
+We initialize a new client instance with the **node address** of the network. With the supplied **block ID** we retreive the block from the tangle network, said block contains in its **payload** the data needed to assemble the file back. 
 > This process takes place in the server.
 
 ![fetch block tangle](https://github.com/lenylopez19/secureFileVault/assets/20192486/9038953f-b41a-4d95-8998-95ab58c3546d)
 
 ## Token sign process
 
-The token gets signed using the provided payload (user id and email), the JWT_SECRET and the HS256 Algorithm.
+The token gets signed using the **provided payload** (user id and email), the **JWT_SECRET** and the **HS256 Algorithm**.
 getting as result the token string ready to be sent to the user.
 
 > This process takes place in the server.
@@ -169,7 +169,7 @@ getting as result the token string ready to be sent to the user.
 
 ## Token verify/decode process
 
-The provided token (tipically obtained in the header of the user request) gets verfied using the JWT_SECRET and the HS256 algorithm
+The provided token (tipically obtained in the header of the user request) gets verfied using the **JWT_SECRET** and the **HS256 algorithm**
 if the providen token is valid we get its payload data (user id and email).
 
 > This process takes place in the server.
@@ -182,7 +182,7 @@ if the providen token is valid we get its payload data (user id and email).
 
 ## Encryption process
 
-To encrypt the data it generates a random 16 bytes public key for the initializer vector(iv), then it encrypts the data using the aes-256-cbc algorithm, the PRIVATE_KEY, and the generated iv.
+To encrypt the data it generates a random 16 bytes **public key** for the initializer vector(iv), then it encrypts the data using the **aes-256-cbc algorithm**, the **PRIVATE_KEY**, and the **generated iv**.
 
 > This process takes place in the server.
 
@@ -195,7 +195,7 @@ To encrypt the data it generates a random 16 bytes public key for the initialize
 
 ## Decryption process
 
-To Dencrypt the data it utilize the provided initializer vector(iv), the aes-256-cbc algorithm and the PRIVATE_KEY
+To Dencrypt the data it utilize the provided initializer vector(iv), the **aes-256-cbc algorithm** and the **PRIVATE_KEY**
 
 > This process takes place in the server.
 
@@ -208,7 +208,7 @@ To Dencrypt the data it utilize the provided initializer vector(iv), the aes-256
 
 # APP Flow
 
-A series of visual representations illustrating key processes such as user registration (Sign up), authentication (Log in), file management including uploading files, and accessing stored files through downloading. These offer insights into the sequential steps users will take while interacting with the application.
+A series of visual representations illustrating **key processes** such as user registration (Sign up), authentication (Log in), file management including uploading files, and accessing stored files through downloading. These offer **insights** into the sequential steps users will take while interacting with the application.
 
 # Sign up 
 ![sign up user flow](https://github.com/lenylopez19/secureFileVault/assets/20192486/0d8a4787-6b4c-42e3-a137-dd4a19fcd99e)
@@ -240,7 +240,7 @@ A series of visual representations illustrating key processes such as user regis
 
 ## On Device Tests
 
-Results of real device tests in development environment through expo go app.
+Results of **real device** tests in development environment through **expo go app**.
 
 | Device                 | OS      | VERSION | Visual bugs                                           | Functional bugs |
 |------------------------|---------|---------|-------------------------------------------------------|-----------------|
