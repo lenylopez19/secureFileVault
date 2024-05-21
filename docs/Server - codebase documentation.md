@@ -20,15 +20,6 @@
 </dd>
 </dl>
 
-## Constants
-
-<dl>
-<dt><a href="#storage">storage</a></dt>
-<dd><p>Middleware for handling file uploads using multer.
-Sets up a multer instance with custom disk storage configuration.</p>
-</dd>
-</dl>
-
 ## Functions
 
 <dl>
