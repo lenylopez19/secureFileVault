@@ -94,8 +94,8 @@ MySQL is widely used in various industries, proving **maturity** and **stability
 
 
 # App Architecture
+![high level architecture](https://github.com/lenylopez19/secureFileVault/assets/20192486/86c756a9-1b2e-4d50-81fa-a8ac42a65d16)
 
-![high level architecture](https://github.com/lenylopez19/secureFileVault/assets/20192486/b9ead121-81a3-406f-864d-0aeff22e49e6)
 
 ### Server 
 ![backend mvc](https://github.com/lenylopez19/secureFileVault/assets/20192486/e054be28-62fc-48d6-8aa9-583e785f6b8e)
