@@ -324,6 +324,9 @@ Not actually deleting but rather setting it as non-active
 - Test the behavior of different process of the app under bad network conditions.
 
 ## **CODE MAINTAINABILITY**
+
+- Encapsulate related helper funcitons in classes.
+  
 - Normalize font-weight values by creating a constant file with predefined values.
 
 
