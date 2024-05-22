@@ -371,7 +371,7 @@ When inserting a long enough text the input overflows its container.
 
 [Backend Service API](docs/Backend%20API.md)
 
-# Useful resources
+# Useful Resources
 
 [Mobile Client codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
 
