@@ -1,5 +1,7 @@
 
-[APP ANDROID AND IOS IMAGE HERE]
+<p align="center">
+    <image src="https://github.com/lenylopez19/secureFileVault/assets/20192486/316164d3-300c-47da-8fb8-9998703b1cd7" width="80%">
+</p>
 
 # Secure File Vault
 
@@ -13,16 +15,24 @@ When you need to access your file, secureFileVault retrieves the **specific segm
     
 Each file is **verified** with a unique hash to ensure it remains unchanged and **authentic**.
 
-# Technologies
+# Core Technologies
 
-**React native** with **Expo framework**
-> For the mobile clients.
+**React native**(0.74.1) with **Expo framework**(v51.0.6)
+> For the mobile client.
 
-**Node.js** with **Express framework**
+**Node.js**(v21.7.3) with **Express framework**(v4.19.2)
 >For the server and the Restful api
 
-**Mysql** 
+**MySQL** (8.0.33)
 >For the database
+
+**Iota sdk**(1.1.5)
+
+### Complementary
+
+- JWT (JSON WEB TOKEN)
+- multer
+- axios
 
 # Stack Justification
 
@@ -369,12 +379,13 @@ When inserting a long enough text the input overflows its container.
  Set the overflow property to hidden in the container,~~
 
 
-
 # API
 
 [Backend Service API](docs/Backend%20API.md)
 
 # Useful Resources
+
+[Project Setup Instruction](Setup%20Instruction.md)
 
 [Mobile Client codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
 
