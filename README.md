@@ -1,5 +1,6 @@
-
-[APP ANDROID AND IOS IMAGE HERE]
+<p align="center">
+    <image src="https://github.com/lenylopez19/secureFileVault/assets/20192486/9535c12b-9c59-424b-ac06-f758e8bc9482">
+</p>
 
 # Secure File Vault
 
