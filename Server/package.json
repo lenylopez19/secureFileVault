@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@iota/sdk": "^1.1.5",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.9.7",
+    "zod": "3.23.4"
+  },
+  "name": "server",
+  "version": "0.0.1",
+  "description": "backend api rest service",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch-path=./ server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "leny lopez",
+  "license": "ISC",
+  "devDependencies": {
+    "jsdoc-to-markdown": "^8.0.1"
+  }
+}

@@ -1,0 +1,19 @@
+#Database Configuration
+DB_HOST = 'someHost'
+DB_PORT = 0000
+DB_USER = 'someUser'
+DB_PASSWORD = 'somePassword'
+DB_NAME = 'someDatabesName'
+
+#server configuration
+PORT = 3000
+
+#JSON WEB TOKEN CONFIGURATION.
+JWT_SECRET = 'someSecureKey'
+
+##Encryption KEY
+KEY = 'another,someSecureKey'
+
+##IOTA CONFIG
+TAG = 'app identifier for transactions'
+NODE_URL = "iota network url"
