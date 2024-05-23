@@ -15,16 +15,24 @@ When you need to access your file, secureFileVault retrieves the **specific segm
     
 Each file is **verified** with a unique hash to ensure it remains unchanged and **authentic**.
 
-# Technologies
+# Core Technologies
 
-**React native** with **Expo framework**
+**React native**(0.74.1) with **Expo framework**(v51.0.6)
 > For the mobile clients.
 
-**Node.js** with **Express framework**
+**Node.js**(v21.7.3) with **Express framework**(v4.19.2)
 >For the server and the Restful api
 
-**Mysql** 
+**MySQL** (8.0.33)
 >For the database
+
+**Iota sdk**(1.1.5)
+
+### Complementary
+
+- JWT (JSON WEB TOKEN)
+- multer
+- axios
 
 # Stack Justification
 
