@@ -369,12 +369,13 @@ When inserting a long enough text the input overflows its container.
  Set the overflow property to hidden in the container,~~
 
 
-
 # API
 
 [Backend Service API](docs/Backend%20API.md)
 
 # Useful Resources
+
+[Project Setup Instruction](Setup%20Instruction.md)
 
 [Mobile Client codebase documentation](docs/Client%20mobile%20-%20codebase%20documentation.md)
 
