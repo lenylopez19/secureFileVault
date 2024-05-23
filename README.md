@@ -18,7 +18,7 @@ Each file is **verified** with a unique hash to ensure it remains unchanged and 
 # Core Technologies
 
 **React native**(0.74.1) with **Expo framework**(v51.0.6)
-> For the mobile clients.
+> For the mobile client.
 
 **Node.js**(v21.7.3) with **Express framework**(v4.19.2)
 >For the server and the Restful api
