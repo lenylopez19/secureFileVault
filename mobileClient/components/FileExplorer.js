@@ -41,17 +41,13 @@ export default function FileExplorer({ setSelectedFile }) {
             const userFiles = await getUserFiles(userToken)
             initializeFiles(userFiles)
         } catch (error) {
-            setTimeout(() => { //resolved an UI bug on wich the alert prevented the setState of "isRefreshing" from making the visual change on the view
-                Alert.alert(error || 'unexpected error')
-            }, 300)
-        } finally { setIsRefreshing(false) }
+            Alert.alert(error || 'unexpected error', null, () => { setIsRefreshing(false) })
+        }
     }
 
     useEffect(() => {
         (async () => {
             await handleRefresh()
-            // const userFiles = await getUserFiles(userToken)
-            // initializeFiles(userFiles)
         })()
     }, [])
 
