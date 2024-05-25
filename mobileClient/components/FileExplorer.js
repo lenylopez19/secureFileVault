@@ -40,6 +40,7 @@ export default function FileExplorer({ setSelectedFile }) {
         try {
             const userFiles = await getUserFiles(userToken)
             initializeFiles(userFiles)
+            setIsRefreshing(false)
         } catch (error) {
             Alert.alert(error || 'unexpected error', null, () => { setIsRefreshing(false) })
         }
