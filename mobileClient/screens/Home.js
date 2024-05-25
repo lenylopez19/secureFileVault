@@ -61,7 +61,7 @@ export default function Home() {
         const file = selection.assets[0]
         try {
             const result = await uploadFile(file, userToken, isIos)
-            const newFile = result.data.file
+            const newFile = result?.data?.file
             newFile ? addFiles(newFile) : ''
         } catch (error) { Alert.alert(error) }
         finally { setIsLoading(false) }
