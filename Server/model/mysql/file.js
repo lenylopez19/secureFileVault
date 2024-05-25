@@ -88,13 +88,12 @@ export class fileModel {
     */
     static async download(fileId, userId) {
         const [file] = await this.getById(fileId, userId)
-        if (!file) throw createError(404, 'file not found')
+        if (!file || !fs.existsSync(file.url)) throw createError(404, 'Some parts of the file are missing and cannot be assembled back. This could be due to network issues or problems with the file server.')
 
         const block = await fetchBlock(file.block_id)
         if (!block) return createError('500', 'error fetching block')
 
         const payload = JSON.parse(block.data)
-
         const incompleteBase64 = fs.readFileSync(file.url, 'utf8')
         const reconstructedBase64 = payload.key64 + incompleteBase64
 

@@ -35,7 +35,8 @@ export async function downloadFile(fileId, userToken) {
         const donwloadObject = FileSystem.createDownloadResumable(url, fileUri, { headers })
 
         try {
-            const { uri, headers } = await donwloadObject.downloadAsync()
+            const { uri, status, headers } = await donwloadObject.downloadAsync()
+            if (status != 200) return Alert.alert('Error', 'Parts of the file are missing and cannot be assembled back. This could be due to network issues or problems with the server.')
             Sharing.shareAsync(uri)
         } catch (error) { throw error }
 
