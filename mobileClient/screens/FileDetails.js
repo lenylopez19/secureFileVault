@@ -1,5 +1,5 @@
 //CORE
-import { View, Text, StyleSheet, Image, FlatList } from 'react-native'
+import { View, Text, StyleSheet, Image, FlatList, Alert } from 'react-native'
 import React, { useEffect, useContext, useState } from 'react'
 //CONSTANT
 import { ICON } from '../constant/ICON'
@@ -31,7 +31,10 @@ export default function FileDetails({ filename, setModalVisible }) {
 
   useEffect(() => {
     (async () => {
-      SetFiles(await getFilesByName(filename, userToken))
+      try {
+        const files = await getFilesByName(filename, userToken)
+        SetFiles(files)
+      } catch (error) { Alert.alert('Error', error, () => { setModalVisible(false) }) }
     })()
   }, [])
 
