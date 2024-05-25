@@ -38,19 +38,18 @@ Each file is **verified** with a unique hash to ensure it remains unchanged and 
 
 ### React Native with Expo for Mobile Client
 
-Cross-platform Development: **React Native** allows to build mobile apps for both **iOS** and **Android** using a **single codebase**, which saves development **time and resources**.
+**React Native** allows to build mobile apps for both **iOS** and **Android** using a **single codebase**, which saves development **time and resources**. also it has a large and **active community**, along with **extensive documentation** and a rich ecosystem of libraries and plugins, which can help **accelerate development** and provide solutions to common challenges.
 
-Expo for Rapid Development: Expo provides a set of tools and services that simplify and **speed up** the **development process**, offering crutial features like **hot reloading** and many more
+Expo provides a set of tools and services that simplify and **speed up** the **development process**, offering crutial features like **hot reloading** and many more
 
-Large Community and Ecosystem: React Native has a large and **active community**, along with **extensive documentation** and a rich ecosystem of libraries and plugins, which can help **accelerate development** and provide solutions to common challenges.
 
 ### Node.js with Express for Server
 
 Using Node.js and Express allows to **maintain a unified development** **environment** with JavaScript across both the client and server sides, **reducing context switching** and improving developer productivity.
 
-Asynchronous I/O: Node.js is known for its **non-blocking**, **event-driven architecture**, making it well-suited for **handling I/O-bound tasks** like file uploads and network requests efficiently.
+Node.js is known for its **non-blocking**, **event-driven architecture**, making it well-suited for **handling I/O-bound tasks** like file uploads and network requests efficiently.
 
-Express for RESTful APIs: Express as a minimalist web framework for Node.js **simplifies the process** of building **robust** and **scalable** RESTful APIs, which is essential for handling file uploads and interacting with the **Tangle network**.
+Express as a minimalist web framework for Node.js **simplifies the process** of building **robust** and **scalable** RESTful APIs, which is essential for handling file uploads and interacting with the **Tangle network**.
 
 ### **Local Storage on Node.js Server:**
 
@@ -58,7 +57,7 @@ Storing files locally on the Node.js server can provide simplicity and control o
 
 ### **MySQL for Database:**
 
-Relational Data Structure: MySQL is well-suited for **structured** data storage, which could be **beneficial** for managing **file metadata**, user information, and other structured data associated with the application.
+MySQL is well-suited for **structured** data storage, which could be **beneficial** for managing **file metadata**, user information, and other structured data associated with the application.
 
 MySQL is widely used in various industries, proving **maturity** and **stability**, offering reliability, and **extensive documentation**. It also provides features like **indexing**, and **ACID compliance**, which are important for data integrity and consistency.
 
@@ -321,7 +320,6 @@ Not actually deleting but rather setting it as non-active
 
 - Replacing the flatlist component with a more performant one like flashlist or similars
 
-  
 
 ## **ERROR HANDLING:**
 
